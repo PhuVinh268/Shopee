@@ -44,6 +44,15 @@ html {
   }
 }
 
+@keyframes growth {
+  from {
+    transform: scale(var(--growth-from));
+  }
+  to {
+    transform: scale(var(--growth-to));
+  }
+}
+
 /* Modal */
 .modal {
   position: fixed;
@@ -52,6 +61,8 @@ html {
   bottom: 0;
   left: 0;
   display: flex;          /* căn giữa */
+  animation: fadeIn linear 0.2s;
+  /* display: none;       trick giả lập test animation  */
 }
 
 .modal__overlay {
@@ -65,10 +76,12 @@ html {
   /* width: 300px;
   height: 300px; */
   /* background-color: var(--white-color); */
+  --growth-from: 0.7;
+  --growth-to: 1;
   margin: auto;            /* căn giữa */
-  /* position: relative; */
+  position: relative;
   z-index: 1;
-  /* border-radius: 5px; */
+  animation: growth linear 0.1s;
 }
 
 /* Button style */
